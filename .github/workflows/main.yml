@@ -3,7 +3,7 @@ on:
   discussion:
     types: created
     jobs:
-      template_validator:
+      - template_validator:
         runs-on: self-hosted
         name: Template Validator
         steps:
