@@ -1,17 +1,1 @@
 
-on:
-  discussion:
-    types: created
-    jobs:
-      - template_validator:
-        runs-on: self-hosted
-        name: Template Validator
-        steps:
-        - name: All Checks
-          uses: flowdify/contribution-inspector@main
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            issue--greeting-message: 'Thanks for your contribution! :)'
-            pull-request--greeting-message: 'Thanks for your contribution! :)'
-
-
