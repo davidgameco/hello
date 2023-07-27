@@ -1,1 +1,25 @@
+name: Notify
 
+# Controls when the workflow will run
+on:
+  # On discussion created
+  discussion:
+      types: created
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: cinotify/github-action@main
+        with:
+          to: 'david@davidgameco.com'
+          subject: 'Actions | New Bug Report'
+          body: 'New Bug Report in the DGC Forum.'
